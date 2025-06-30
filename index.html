@@ -1,128 +1,301 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Скрытый текст</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сборник песен</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        background-color: #f4f4f4;
-      }
-      .accordion-item {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        overflow: hidden;
-      }
-      .accordion-header {
-        background-color: #e2e2e2;
-        padding: 15px;
-        cursor: pointer;
-        font-weight: bold;
-        border-bottom: 1px solid #ddd;
-        transition: background-color 0.3s ease;
-      }
-      .accordion-header:hover {
-        background-color: #d4d4d4;
-      }
-      .accordion-content {
-        padding: 15px;
-        display: none; /* Изначально скрываем контент */
-        border-top: 1px solid #eee;
-        background-color: #fafafa;
-      }
-      .accordion-content.active {
-        display: block; /* Показываем контент, если активен */
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Убираем стандартные отступы */
+            padding: 20px; /* Отступ от края для маленьких экранов (увеличено с 5px) */
+            background-color: #f4f4f4;
+            box-sizing: border-box; /* Учитываем padding в общей ширине */
+            display: flex; /* Делаем body flex-контейнером */
+            flex-direction: column; /* Элементы будут располагаться вертикально */
+            align-items: center; /* Центрируем элементы по горизонтали */
+            min-height: 100vh; /* Минимальная высота, чтобы flexbox работал */
+        }
+        h1 {
+            width: 100%; /* Заголовок занимает всю ширину для центрирования */
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            max-width: 80ch; /* Ограничиваем ширину заголовка тоже */
+        }
+
+        /* Новый контейнер для всех аккордеонов */
+        .accordion-wrapper {
+            width: 100%; /* По умолчанию на маленьких экранах почти на всю ширину */
+            max-width: 80ch; /* Максимальная ширина для больших экранов */
+        }
+
+        .accordion-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .accordion-header {
+            background-color: #e2e2e2;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease;
+            color: #333;
+        }
+        .accordion-header:hover {
+            background-color: #d4d4d4;
+        }
+        .accordion-content {
+            padding: 15px;
+            display: none; /* Изначально скрываем контент */
+            border-top: 1px solid #eee;
+            background-color: #fafafa;
+            white-space: pre-wrap; /* Сохраняет переносы строк и пробелы */
+            line-height: 1.6; /* Улучшает читаемость */
+            color: #555;
+            overflow-wrap: break-word; /* Перенос длинных слов */
+        }
+        .accordion-content.active {
+            display: block; /* Показываем контент, если активен */
+        }
+
+        /* Медиазапрос для больших экранов (например, от 768px и шире) */
+        @media (min-width: 768px) {
+            body {
+                padding: 40px; /* Больший отступ по бокам для больших экранов */
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
+
     <h1>Сборник песен</h1>
 
-    <div class="accordion-item">
-      <div class="accordion-header">2423 - Я песнь пою тебе Иерусалим</div>
-      <div class="accordion-content">
-        <pre>
-        2423 - Я песнь пою тебе Иерусалим
+    <div class="accordion-wrapper">
+        <div class="accordion-item">
+            <div class="accordion-header">48 - Не в словах молитвенных речей</div>
+            <div class="accordion-content">
+48 - Не в словах молитвенных речей
 
-        Куплет 1
-        Я песнь пою тебе, Иерусалим,
-        Молюсь за мир тебе, Иерусалим.
-        Храни Господь тебя, Иерусалим,
-        Да будет мир тебе, Иерусалим!
+Куплет 1
+Не в словах молитвенных речей
+И не в песнях жизнь души моей.
+Вся она сокрыта во Христе:
+Все мои источники в Тебе!
 
-        Припев
-        Шалом, шалом, Иерусалим!
-        Шалом, шалом! Да будет мир тебе, Иерусалим!
-        Храни Господь, тебя, Иерусалим!
+Куплет 2
+Не в желаньях я ищу покой
+И не в счастье, данном мне Тобой.
+Песнь одна всегда звучит во мне:
+Все мои источники в Тебе!
 
-        Куплет 2
-        Прошу я мир тебе, Иерусалим,
-        Пусть мир пребудет среди стен твоих.
-        Любви и песен радостный родник,
-        Да будет мир тебе, Иерусалим!
+Куплет 3
+Видишь Ты забот моих волну
+И даешь мне в сердце тишину,
+Все желанья приношу Тебе:
+Все мои источники в Тебе!
 
-        Куплет 3
-        Ну как забыть тебя, Иерусалим?
-        Нельзя забыть тебя, Иерусалим!
-        Я помню о тебе, Иерусалим,
-        Я хвалу тебе пою, Иерусалим!
-      </pre
-        >
-      </div>
-    </div>
+Куплет 4
+Ты явил Себя, любовь Свою, -
+Будет ли отраднее в раю?
+Радостью трепещет все во мне:
+Все мои источники в Тебе!
 
-    <div class="accordion-item">
-      <div class="accordion-header">Заголовок 2: Мои возможности</div>
-      <div class="accordion-content">
-        <p>Я могу помочь вам с широким кругом задач, таких как:</p>
-        <ul>
-          <li>Написание электронных писем, отчетов, статей.</li>
-          <li>Перевод текстов между языками.</li>
-          <li>
-            Создание стихов, сценариев, музыкальных произведений, электронных
-            писем, писем и т.д.
-          </li>
-          <li>Ответы на ваши вопросы на основе имеющихся знаний.</li>
-        </ul>
-      </div>
-    </div>
+Куплет 5
+Разве мне от зноя Ты не сень?
+Спрячусь я в Тебе в палящий день.
+Воспою ж в пустыне я Тебе:
+Все мои источники в Тебе!
 
-    <div class="accordion-item">
-      <div class="accordion-header">Заголовок 3: Как я работаю</div>
-      <div class="accordion-content">
-        <p>
-          Я использую передовые алгоритмы машинного обучения для обработки и
-          генерации текста. Моя база знаний постоянно пополняется, что позволяет
-          мне предоставлять актуальную и точную информацию.
-        </p>
-      </div>
+Куплет 6
+Сила вражья мне кругом грозит,
+Но душе Господне имя - щит.
+Полную победу дал Он мне:
+Все мои источники в Тебе!
+
+Куплет 7
+Ты - моя опора и покой,
+Крепость и покров, Спаситель мой!
+Вечное блаженство дал Ты мне:
+Все мои источники в Тебе!
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">92 - Глубже всех морей и океанов</div>
+            <div class="accordion-content">
+92 - Глубже всех морей и океанов
+
+Куплет 1
+Глубже всех морей и океанов,
+Необъятна, вечна, велика,
+Выше всех златых светил небесных -
+Беспредельная любовь Христа.
+
+Припев
+Он омыл грехи мои,
+Дал ризы снежной белизны,
+Дар Святого Духа даровал
+И чадом Божиим назвал.
+
+Куплет 2
+Мрачны, беспросветны и ужасны
+Были годы в страшной тьме греха;
+Гибнул я, израненный, несчастный,
+Но Иисус нашел и спас меня.
+
+Куплет 3
+Счастлив я! Христовой благодатью
+Я спасен от смерти и суда;
+Сердцем грех теперь не овладеет,
+В нем обитель Господа Христа.
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">514 - Мой дом на небе за облаками</div>
+            <div class="accordion-content">
+514 - Мой дом на небе за облаками
+
+Куплет 1
+Мой дом на небе, за облаками,
+Где жизни новой уж нет конца,
+Друзья, родные где будут с нами
+Петь песни славы там у Отца.
+
+Припев
+О дом небесный, где быть желаю,
+Туда стремлюсь я, чтоб вечно жить;
+Там буду Бога я вечно славить
+И в свете чудном Христу служить.
+
+Куплет 2
+Как в бурю с моря моряк стремится
+Причалить в гавань, чтоб отдохнуть,
+Так рвусь я сердцем в жилище света,
+Где отдых ждет всех свершивших путь.
+
+Куплет 3
+Отрадно будет в том вечном доме,
+Увижу Друга души моей,
+Кто на Голгофе за грех наш умер
+И примирил нас с Отцом людей.
+
+Куплет 4
+В печалях горьких слез лить не будем,
+Навеки славу мы будем петь;
+Разлуки, скорби, болезнь забудем,
+Не будем больше нужды терпеть.
+            </div>   
+        </div>     
+
+        <div class="accordion-item">
+            <div class="accordion-header">737 - Славьте Бога славьте в песнопеньях</div>
+            <div class="accordion-content">
+737 - Славьте Бога славьте в песнопеньях
+
+Куплет 1
+Славьте Бога, славьте в песнопеньях,
+Славьте, славьте жизнью всей своей,
+В стройном пенье, в радостном хваленье,
+Средь мучений и среди скорбей!
+
+Припев
+Славьте Бога,
+(Славьте вы Бога)
+Славьте всей душой!
+Нас Он спас Собой!
+Славьте Бога,
+(Славьте вы Бога)
+Слава вечная Ему!
+
+Куплет 2
+Славьте Бога каждое мгновенье
+В чувствах ваших, мыслях и делах
+За Его, Творца, долготерпенье
+К миру, гибнущему во грехах!
+
+Куплет 3
+Славьте Бога, славьте всей душою
+За Его великую любовь,
+Что от смерти спас Он нас Собою,
+На кресте пролил святую кровь!
+
+Куплет 4
+Славьте Бога, славьте бесконечно!
+Скоро Сам во славе Он придет
+И Своей любовью чудной, вечной
+Всех спасенных в дом Свой приведет.
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">2423 - Я песнь пою тебе Иерусалим</div>
+            <div class="accordion-content">
+2423 - Я песнь пою тебе Иерусалим
+
+Куплет 1
+Я песнь пою тебе, Иерусалим,
+Молюсь за мир тебе, Иерусалим.
+Храни Господь тебя, Иерусалим,
+Да будет мир тебе, Иерусалим!
+
+Припев
+Шалом, шалом, Иерусалим!
+Шалом, шалом! Да будет мир тебе, Иерусалим!
+Храни Господь, тебя, Иерусалим!
+
+Куплет 2
+Прошу я мир тебе, Иерусалим,
+Пусть мир пребудет среди стен твоих.
+Любви и песен радостный родник,
+Да будет мир тебе, Иерусалим!
+
+Куплет 3
+Ну как забыть тебя, Иерусалим?
+Нельзя забыть тебя, Иерусалим!
+Я помню о тебе, Иерусалим,
+Я хвалу тебе пою, Иерусалим!
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">Конец</div>
+            <div class="accordion-content">
+                Финал
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header">Конец</div>
+            <div class="accordion-content">
+                Финал
+            </div>
+        </div>
+
     </div>
 
     <script>
-      // Получаем все элементы с классом 'accordion-header'
-      const accordionHeaders = document.querySelectorAll(".accordion-header");
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-      // Добавляем слушателя событий клика для каждого заголовка
-      accordionHeaders.forEach((header) => {
-        header.addEventListener("click", () => {
-          // Находим следующий элемент (контент) после заголовка
-          const content = header.nextElementSibling;
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.classList.toggle('active');
 
-          // Переключаем класс 'active' для отображения/скрытия контента
-          content.classList.toggle("active");
-
-          // Опционально: можно закрывать другие открытые разделы
-          // accordionHeaders.forEach(otherHeader => {
-          //     if (otherHeader !== header) {
-          //         otherHeader.nextElementSibling.classList.remove('active');
-          //     }
-          // });
+                // Закрыть другие открытые разделы
+                accordionHeaders.forEach(otherHeader => {
+                    if (otherHeader !== header) {
+                        otherHeader.nextElementSibling.classList.remove('active');
+                    }
+                });
+            });
         });
-      });
     </script>
-  </body>
+
+</body>
 </html>
