@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скрытый текст</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Убираем стандартные отступы */
+            padding: 20px; /* Отступ от края для маленьких экранов */
+            background-color: #f4f4f4;
+            display: flex; /* Используем flexbox для центрирования */
+            justify-content: center; /* Центрируем контент по горизонтали */
+            min-height: 100vh; /* Минимальная высота, чтобы flexbox работал */
+            box-sizing: border-box; /* Учитываем padding в общей ширине */
+        }
+        h1 {
+            width: 100%; /* Заголовок занимает всю ширину для центрирования */
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .accordion-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 100%; /* Чтобы аккордеон занимал всю доступную ширину */
+            max-width: 80ch; /* Ограничение ширины для больших экранов */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .accordion-header {
+            background-color: #e2e2e2;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease;
+            color: #333;
+        }
+        .accordion-header:hover {
+            background-color: #d4d4d4;
+        }
+        .accordion-content {
+            padding: 15px;
+            display: none; /* Изначально скрываем контент */
+            border-top: 1px solid #eee;
+            background-color: #fafafa;
+            white-space: pre-wrap; /* Сохраняет переносы строк и пробелы */
+            line-height: 1.6; /* Улучшает читаемость */
+            color: #555;
+            overflow-wrap: break-word; /* Перенос длинных слов */
+        }
+        .accordion-content.active {
+            display: block; /* Показываем контент, если активен */
+        }
+
+        /* Медиазапрос для больших экранов (например, от 768px и шире) */
+        @media (min-width: 768px) {
+            body {
+                padding: 40px; /* Больший отступ по бокам для больших экранов */
+            }
+            .accordion-item {
+                /* width: auto; max-width уже работает */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Пример скрытого текста</h1>
+
+    <div class="accordion-item">
+        <div class="accordion-header">Заголовок 1: Обо мне</div>
+        <div class="accordion-content">
+            Привет! Я большая языковая модель, разработанная Google. Я могу генерировать текст, переводить языки, писать различные виды творческого контента и отвечать на ваши вопросы информативным способом.
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">2423 - Я песнь пою тебе Иерусалим</div>
+        <div class="accordion-content">
+            2423 - Я песнь пою тебе Иерусалим
+
+            Куплет 1
+            Я песнь пою тебе, Иерусалим,
+            Молюсь за мир тебе, Иерусалим.
+            Храни Господь тебя, Иерусалим,
+            Да будет мир тебе, Иерусалим!
+
+            Припев
+            Шалом, шалом, Иерусалим!
+            Шалом, шалом! Да будет мир тебе, Иерусалим!
+            Храни Господь, тебя, Иерусалим!
+
+            Куплет 2
+            Прошу я мир тебе, Иерусалим,
+            Пусть мир пребудет среди стен твоих.
+            Любви и песен радостный родник,
+            Да будет мир тебе, Иерусалим!
+
+            Куплет 3
+            Ну как забыть тебя, Иерусалим?
+            Нельзя забыть тебя, Иерусалим!
+            Я помню о тебе, Иерусалим,
+            Я хвалу тебе пою, Иерусалим!
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">Заголовок 3: Как я работаю</div>
+        <div class="accordion-content">
+            Я использую передовые алгоритмы машинного обучения для обработки и генерации текста. Моя база знаний постоянно пополняется, что позволяет мне предоставлять актуальную и точную информацию.
+        </div>
+    </div>
+
+    <script>
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.classList.toggle('active');
+
+                // Закрыть другие открытые разделы
+                accordionHeaders.forEach(otherHeader => {
+                    if (otherHeader !== header) {
+                        otherHeader.nextElementSibling.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
