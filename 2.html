@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скрытый текст</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .accordion-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .accordion-header {
+            background-color: #e2e2e2;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease;
+        }
+        .accordion-header:hover {
+            background-color: #d4d4d4;
+        }
+        .accordion-content {
+            padding: 15px;
+            display: none; /* Изначально скрываем контент */
+            border-top: 1px solid #eee;
+            background-color: #fafafa;
+            white-space: pre-wrap; /* Сохраняет переносы строк и пробелы */
+        }
+        .accordion-content.active {
+            display: block; /* Показываем контент, если активен */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Пример скрытого текста</h1>
+
+    <div class="accordion-item">
+        <div class="accordion-header">Заголовок 1: Обо мне</div>
+        <div class="accordion-content">
+            <p>Привет! Я большая языковая модель, разработанная Google. Я могу генерировать текст, переводить языки, писать различные виды творческого контента и отвечать на ваши вопросы информативным способом.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">2423 - Я песнь пою тебе Иерусалим</div>
+        <div class="accordion-content">
+            2423 - Я песнь пою тебе Иерусалим
+
+            Куплет 1
+            Я песнь пою тебе, Иерусалим,
+            Молюсь за мир тебе, Иерусалим.
+            Храни Господь тебя, Иерусалим,
+            Да будет мир тебе, Иерусалим!
+
+            Припев
+            Шалом, шалом, Иерусалим!
+            Шалом, шалом! Да будет мир тебе, Иерусалим!
+            Храни Господь, тебя, Иерусалим!
+
+            Куплет 2
+            Прошу я мир тебе, Иерусалим,
+            Пусть мир пребудет среди стен твоих.
+            Любви и песен радостный родник,
+            Да будет мир тебе, Иерусалим!
+
+            Куплет 3
+            Ну как забыть тебя, Иерусалим?
+            Нельзя забыть тебя, Иерусалим!
+            Я помню о тебе, Иерусалим,
+            Я хвалу тебе пою, Иерусалим!
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header">Заголовок 3: Как я работаю</div>
+        <div class="accordion-content">
+            <p>Я использую передовые алгоритмы машинного обучения для обработки и генерации текста. Моя база знаний постоянно пополняется, что позволяет мне предоставлять актуальную и точную информацию.</p>
+        </div>
+    </div>
+
+    <script>
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.classList.toggle('active');
+
+                // Опционально: закрыть другие открытые разделы
+                accordionHeaders.forEach(otherHeader => {
+                    if (otherHeader !== header) {
+                        otherHeader.nextElementSibling.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
