@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0; /* Убираем стандартные отступы */
             padding: 20px; /* Отступ от края для маленьких экранов (увеличено с 5px) */
-            background-color: #f4f4f4;
+            background-color: #313333;
             box-sizing: border-box; /* Учитываем padding в общей ширине */
             display: flex; /* Делаем body flex-контейнером */
             flex-direction: column; /* Элементы будут располагаться вертикально */
@@ -20,9 +20,14 @@
             width: 100%; /* Заголовок занимает всю ширину для центрирования */
             text-align: center;
             margin-bottom: 20px;
-            color: #333;
+            color: #fff;
             max-width: 80ch; /* Ограничиваем ширину заголовка тоже */
         }
+        h2 {
+            color: #fff;
+            max-width: 80ch; /* Ограничиваем ширину заголовка тоже */
+        }
+
 
         /* Новый контейнер для всех аккордеонов */
         .accordion-wrapper {
@@ -31,33 +36,33 @@
         }
 
         .accordion-item {
-            background-color: #fff;
-            border: 1px solid #ddd;
+            background-color: #444444;
+            border: 1px solid #555555;
             margin-bottom: 10px;
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .accordion-header {
-            background-color: #e2e2e2;
+            background-color: #333535;
             padding: 15px;
             cursor: pointer;
             font-weight: bold;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #444646;
             transition: background-color 0.3s ease;
-            color: #333;
+            color: #C7C0B5;
         }
         .accordion-header:hover {
-            background-color: #d4d4d4;
+            background-color: #3a3d3d;
         }
         .accordion-content {
             padding: 15px;
             display: none; /* Изначально скрываем контент */
-            border-top: 1px solid #eee;
-            background-color: #fafafa;
+            border-top: 1px solid #666666;
+            background-color: #4c4c4c;
             white-space: pre-wrap; /* Сохраняет переносы строк и пробелы */
             line-height: 1.6; /* Улучшает читаемость */
-            color: #555;
+            color: #e0e0e0;
             overflow-wrap: break-word; /* Перенос длинных слов */
         }
         .accordion-content.active {
